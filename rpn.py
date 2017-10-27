@@ -7,7 +7,18 @@ def calculate(myarg):
     """
     Calculate expression described in `myarg`
     """
-    pass
+    stack = []
+    tokenized = myarg.split()
+    for token in tokenized:
+        if token == '+':
+            arg1 = stack.pop()
+            arg2 = stack.pop()
+            result = arg1 + arg2
+            stack.append(result)
+        else:
+            stack.append(int(token))
+    print(stack)
+    return stack.pop()
 
 def main():
     """
