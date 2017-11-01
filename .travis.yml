@@ -4,7 +4,8 @@ python:
 before_install:
   - pip install pytest pytest-cov
   - pip install python-coveralls
+  - pip install coverage
 script:
-  - python test_rpn.py
+  - make test
 after_success:
   - coveralls
