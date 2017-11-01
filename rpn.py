@@ -1,7 +1,14 @@
 #!/usr/bin/env python3
 """
 Reverse polish notation calculator
+c4cs-f17-rpn
 """
+import operator
+
+ops = {
+    '+': operator.add,
+    '-': operator.sub
+}
 
 def calculate(myarg):
     """
@@ -10,18 +17,14 @@ def calculate(myarg):
     stack = []
     tokenized = myarg.split()
     for token in tokenized:
-        if token == '+':
-            arg1 = stack.pop()
-            arg2 = stack.pop()
-            result = arg1 + arg2
-            stack.append(result)
-        elif token == '-':
-            arg1 = stack.pop()
-            arg2 = stack.pop()
-            result = arg2 - arg1
-            stack.append(result)
-        else:
+        try:
             stack.append(int(token))
+        except ValueError:
+            arg2 = stack.pop()
+            arg1 = stack.pop()
+            function = ops[token]
+            result = function(arg1, arg2)
+            stack.append(result)
     print(stack)
     return stack.pop()
 
