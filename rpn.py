@@ -7,7 +7,8 @@ import operator
 
 ops = {
     '+': operator.add,
-    '-': operator.sub
+    '-': operator.sub,
+    '*': operator.mul,
 }
 
 def calculate(myarg):
