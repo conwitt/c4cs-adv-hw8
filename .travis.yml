@@ -1,9 +1,9 @@
 language: python
 python:
   - 3.5
-before-script:
+before_install:
   - pip install coveralls
 script:
   - make test
-after-success:
+after_success:
   - coveralls
