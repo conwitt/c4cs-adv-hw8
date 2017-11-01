@@ -9,7 +9,7 @@ ops = {
     '+': operator.add,
     '-': operator.sub,
     '*': operator.mul,
-    '/': operator.div,
+    '/': operator.truediv,
 }
 
 def calculate(myarg):
