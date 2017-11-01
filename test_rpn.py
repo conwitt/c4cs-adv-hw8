@@ -29,3 +29,10 @@ class TestBasics(unittest.TestCase):
         """
         result = rpn.calculate('5 6 *')
         self.assertEqual(30, result)
+
+    def test_divide(self):
+        """
+        Test for division
+        """
+        result = rpn.calculate('30 6 /')
+        self.assertEqual(5, result)
