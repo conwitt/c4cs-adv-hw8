@@ -12,6 +12,7 @@ OPS = {
     '-': operator.sub,
     '*': operator.mul,
     '/': operator.truediv,
+    '%': operator.mod,
 }
 
 def colorize(token):

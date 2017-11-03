@@ -39,3 +39,12 @@ class TestBasics(unittest.TestCase):
         """
         result = self.calc.calculate('30 6 /')
         self.assertEqual(5, result)
+
+    def test_modulo(self):
+        """
+        Test for modulo divisiion
+        """
+        result0 = self.calc.calculate('6 4 %')
+        result1 = self.calc.calculate('6 3 %')
+        self.assertEqual(2, result0)
+        self.assertEqual(0, result1)
