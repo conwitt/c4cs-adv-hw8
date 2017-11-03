@@ -48,3 +48,10 @@ class TestBasics(unittest.TestCase):
         result1 = self.calc.calculate('6 3 %')
         self.assertEqual(2, result0)
         self.assertEqual(0, result1)
+
+    def test_exponent(self):
+        """
+        Test for exponentiation
+        """
+        result = self.calc.calculate('3 2 ^')
+        self.assertEqual(9, result)
